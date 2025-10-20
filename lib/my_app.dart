@@ -2,17 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/routing/app_router.dart';
-import 'core/routing/routes.dart';
+import 'package:intermediate_final_project/core/routing/app_router.dart';
 import 'core/theme/theme_data/dark_them_data.dart';
 import 'core/theme/theme_data/light_theme_data.dart';
 import 'core/theme/theme_manager/theme_cubit.dart';
 import 'generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.appRouter});
-
-  final AppRouter appRouter;
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +22,7 @@ class MyApp extends StatelessWidget {
           providers: [BlocProvider(create: (_) => ThemeCubit())],
           child: BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, newMode) {
-              return MaterialApp(
+              return MaterialApp.router(
                 debugShowCheckedModeBanner: false,
 
                 // Set the app theme
@@ -44,8 +41,7 @@ class MyApp extends StatelessWidget {
                 supportedLocales: S.delegate.supportedLocales,
 
                 // Set the initial route based on user authentication and role
-                onGenerateRoute: appRouter.generateRoute,
-                initialRoute: Routes.navbar,
+                routerConfig: AppRouter.router,
               );
             },
           ),
