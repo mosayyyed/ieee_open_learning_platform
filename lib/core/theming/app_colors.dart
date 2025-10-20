@@ -14,6 +14,7 @@ class AppColors {
   // Common Colors
   static const primary = Color(0xFFF7A501);
   static const error = Color(0xFFB00020);
+  static const black19 = Color(0xFF191100);
 
   static const primaryFixed = Color(0xFFFDFFF5);
   static const onPrimaryFixed = Color(0xFF1E1E1E);
@@ -26,5 +27,4 @@ class AppColors {
   static const onSurfaceLight = Color(0xFF000000);
   static const onSurfaceDark = Color(0xFFFFFFFF);
   static const onError = Color(0xFFFFFFFF);
-  static const onHintColor = Color(0xFF778181);
 }
