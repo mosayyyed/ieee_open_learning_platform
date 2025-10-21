@@ -19,7 +19,7 @@ class CustomPasswordField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: Styles.textStyle16.copyWith(color: AppColors.primary),
+            style: Styles.textStyle20.copyWith(color: AppColors.primary),
           ),
           SizedBox(height: 6.h),
           CustomTextField(
