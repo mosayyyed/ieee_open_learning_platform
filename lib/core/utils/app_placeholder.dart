@@ -1,0 +1,3 @@
+class AppPlaceholder {
+  AppPlaceholder._();
+}
