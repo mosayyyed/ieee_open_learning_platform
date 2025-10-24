@@ -35,28 +35,7 @@ class CoursesListView extends StatelessWidget {
             );
           },
         ),
-        SizedBox(height: 40.h),
-        ///here we need to reface this Button
-        Align(
-          alignment: Alignment.centerRight,
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              minimumSize: Size(152.w, 48.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            ),
-            child: Text(
-              'Save Changes',
-              style: Styles.boldTextStyle18.copyWith(
-                color: AppColors.onPrimary,
-              ),
-            ),
-          ),
-        ),
+
       ],
     );
   }

@@ -9,8 +9,8 @@ class ContactUsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Contact US'),
-      body: ContactUsBody(),
+      appBar: const CustomAppBar(title: 'Contact US'),
+      body: const ContactUsBody(),
     );
   }
 }
