@@ -1,23 +1,27 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intermediate_final_project/core/utils/app_router.dart';
+import 'package:intermediate_final_project/core/routing/app_router.dart';
+import 'core/helpers/shared_pref_helper.dart';
+import 'my_app.dart';
 
-void main() {
-  runApp(const OpenSourceProject());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  AppRouter.initRouter();
+  await ScreenUtil.ensureScreenSize();
+  await SharedPrefHelper.init();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+  );
 
-class OpenSourceProject extends StatelessWidget {
-  const OpenSourceProject({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      builder: (context, child) => MaterialApp.router(
-        routerConfig: AppRouter.router,
-        debugShowCheckedModeBanner: false,
-      ),
-    );
-  }
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) {
+        return MyApp();
+      },
+    ),
+  );
 }
