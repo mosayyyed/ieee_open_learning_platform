@@ -16,7 +16,7 @@ class CustomRowToggleSection extends StatefulWidget {
     this.subTitle,
     this.initialValue = false,
     this.onChanged,
-    this.titleColor = AppColors.black19
+    this.titleColor = AppColors.black19,
   });
 
   @override
