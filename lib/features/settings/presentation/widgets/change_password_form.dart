@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intermediate_final_project/core/widgets/custom_elevated_button.dart';
 import 'package:intermediate_final_project/core/widgets/labeled_text_field.dart';
 
-import 'update_button.dart';
 class ChangePasswordForm extends StatelessWidget {
   const ChangePasswordForm({super.key});
 
@@ -19,7 +19,7 @@ class ChangePasswordForm extends StatelessWidget {
         SizedBox(height: 20.h),
         Align(
           alignment: Alignment.centerRight,
-          child: UpdateButton(),
+          child: CustomElevatedButton(text: 'Update', onPressed: (){}),
         ),
       ],
     );
